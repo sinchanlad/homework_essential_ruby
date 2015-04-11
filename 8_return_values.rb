@@ -47,6 +47,12 @@ def mean(list_of_numbers)
 
   # ====================
   # Your code goes here.
+  count_of_numbers = 0
+  list_of_numbers.each do |number|
+    count_of_numbers = count_of_numbers + 1
+  end
+  mean_of_numbers = sum(list_of_numbers)/count_of_numbers
+  return mean_of_numbers
   # ====================
 end
 
