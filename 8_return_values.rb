@@ -47,11 +47,8 @@ def mean(list_of_numbers)
 
   # ====================
   # Your code goes here.
-  count_of_numbers = 0
-  list_of_numbers.each do |number|
-    count_of_numbers = count_of_numbers + 1
-  end
-  mean_of_numbers = sum(list_of_numbers)/count_of_numbers
+  count_of_numbers = list_of_numbers.length
+  mean_of_numbers = sum(list_of_numbers).round(2)/count_of_numbers
   return mean_of_numbers
   # ====================
 end
@@ -70,6 +67,14 @@ def variance(list_of_numbers)
 
   # ====================
   # Your code goes here.
+  sum_of_squared = 0
+  mean_of_nos = mean(list_of_numbers)
+  list_of_numbers.each do |number|
+    sum_of_squared = sum_of_squared + ((number - mean_of_nos).round(2))**2
+  end
+  count_of_numbers = list_of_numbers.length
+  variance_of_numbers = sum_of_squared/count_of_numbers
+  return variance_of_numbers
   # ====================
 end
 
@@ -81,6 +86,9 @@ end
 def standard_deviation(list_of_numbers)
   # ====================
   # Your code goes here.
+  var_of_numbers = variance(list_of_numbers)
+  std_dev = (var_of_numbers**(0.5)).round(2)
+  return std_dev
   # ====================
 end
 
