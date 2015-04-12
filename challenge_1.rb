@@ -16,6 +16,12 @@
 def pmt(rate, nper, pv)
   # =========================================================
   # Your code to implement the method goes here.
+    exponential_rate = ((1+rate)**nper).round(5)
+    numerator = pv*rate*exponential_rate
+    denominator = (exponential_rate-1).round(5)
+    monthly_payment = numerator/denominator
+    return monthly_payment
+
   # You shouldn't have to write or change code anywhere else.
   # =========================================================
 end
